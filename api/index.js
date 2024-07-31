@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js"; //import router as userRouter
 import authRouter from "./routes/auth.route.js"; //import router as authRouter
+import listingRouter from "./routes/listing.route.js"; //import router as listingRouter
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -16,12 +18,15 @@ mongoose
 const app = express();
 app.use(express.json());
 
+app.use(cookieParser());
+
 app.listen(3000, () => {
   console.log("Server is running in port 3000");
 });
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/listing", listingRouter);
 
 //middleWare
 app.use((err, req, res, next) => {
