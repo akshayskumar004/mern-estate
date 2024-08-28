@@ -274,11 +274,11 @@ export default function Profile() {
               >
                 <p>{listing.name}</p>
               </Link>
-              <div
-                className="flex flex-col items-center gap-3"
-                onClick={() => handleListingDelete(listing._id)}
-              >
-                <button className="text-red-700 ">
+              <div className="flex flex-col items-center gap-3">
+                <button
+                  className="text-red-700 "
+                  onClick={() => handleListingDelete(listing._id)}
+                >
                   <MdDelete />
                 </button>
                 <button className="text-green-700 ">
