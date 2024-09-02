@@ -281,9 +281,11 @@ export default function Profile() {
                 >
                   <MdDelete />
                 </button>
-                <button className="text-green-700 ">
-                  <MdEdit />
-                </button>
+                <Link to={`/update-listing/${listing._id}`}>
+                  <button className="text-green-700">
+                    <MdEdit />
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
