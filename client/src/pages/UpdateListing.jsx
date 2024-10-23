@@ -151,7 +151,7 @@ export default function UpdateListing() {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch(`/api/listing/update/${currentUser._id}`, {
+      const res = await fetch(`/api/listing/update/${params.listingId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -163,7 +163,7 @@ export default function UpdateListing() {
       if (data.success === false) {
         setError(data.message);
       }
-      navigate(`listing/${data._id}`);
+      navigate(`/listing/${params.listingId}`);
     } catch (error) {
       setError(error.message);
       setLoading(false);
